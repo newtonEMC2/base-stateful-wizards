@@ -1,6 +1,7 @@
 {
   "name": "@qcolabs/reactive-global-modals",
   "version": "0.1.0",
+  "type": "module",
   "description": "A lightweight, accessible, and customizable React modal component library with TypeScript support. Features click-outside-to-close, responsive design, and zero dependencies.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -22,9 +23,8 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "NODE_ENV=production tsup --tsconfig tsconfig.build.json",
-    "build:dev": "NODE_ENV=development tsup --tsconfig tsconfig.build.json",
-    "dev": "NODE_ENV=development tsup --watch",
+    "build": "NODE_ENV=production pnpm clean && rollup -c",
+    "dev": "NODE_ENV=development rollup -c --watch",
     "clean": "rm -rf dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -94,6 +94,9 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -106,7 +109,10 @@
     "prettier": "^3.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rollup": "^4.52.2",
+    "rollup-plugin-dts": "^6.2.3",
     "ts-jest": "^29.4.1",
+    "tslib": "^2.8.1",
     "typescript": "^5.0.0"
   }
 }
