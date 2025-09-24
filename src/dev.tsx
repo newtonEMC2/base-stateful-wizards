@@ -1,3 +1,9 @@
+/**
+ * Development testing file for the Accordion component.
+ * This file is used only for local development and testing purposes.
+ * Run with 'pnpm dev' to start the development server.
+ * Not included in the final package bundle.
+ */
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { AccordionComponent } from './lib/accordion.component'
