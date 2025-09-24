@@ -1,8 +1,8 @@
 {
-  "name": "@qcolabs/reactive-global-modals",
+  "name": "@qcolabs/base-stateful-accordion",
   "version": "0.1.0",
   "type": "module",
-  "description": "A lightweight, accessible, and customizable React modal component library with TypeScript support. Features click-outside-to-close, responsive design, and zero dependencies.",
+  "description": "A lightweight, accessible, and customizable React accordion component library with TypeScript support. Features expandable sections, responsive design, and zero dependencies.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -67,13 +67,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newtonEMC2/reactive-global-modals.git"
+    "url": "git+https://github.com/newtonEMC2/base-stateful-accordion.git"
   },
   "bugs": {
-    "url": "https://github.com/newtonEMC2/reactive-global-modals/issues"
+    "url": "https://github.com/newtonEMC2/base-stateful-accordion/issues"
   },
-  "homepage": "https://github.com/newtonEMC2/reactive-global-modals#readme",
-  "demo": "https://codesandbox.io/p/github/newtonEMC2/reactive-global-modals/main?import=true&workspaceId=ws_XP4ZJku14x3GBrsVK3Gt5s",
+  "homepage": "https://github.com/newtonEMC2/base-stateful-accordion#readme",
+  "demo": "https://codesandbox.io/p/github/newtonEMC2/base-stateful-accordion/main?import=true&workspaceId=ws_XP4ZJku14x3GBrsVK3Gt5s",
   "packageManager": "pnpm@10.14.0",
   "engines": {
     "node": ">=16",
