@@ -1,8 +1,11 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
+import serve from 'rollup-plugin-serve'
+import livereload from 'rollup-plugin-livereload'
 
 const isProduction = process.env.NODE_ENV === 'production'
+const isDev = process.env.NODE_ENV === 'development'
 
 // Define all external dependencies that should not be bundled
 const external = ['react', 'react-dom', 'react/jsx-runtime']
@@ -59,4 +62,41 @@ const cjsConfig = {
   },
 }
 
-export default [esmConfig, cjsConfig]
+// Configuration for development build (includes React for testing)
+const devConfig = {
+  input: 'src/dev.tsx',
+  external: [], // Don't externalize anything for dev build
+  plugins: [
+    resolve({
+      preferBuiltins: true,
+      browser: true, // Use browser versions of packages
+    }),
+    commonjs(),
+    typescript({
+      tsconfig: './tsconfig.build.json',
+      declaration: false,
+      declarationMap: false,
+    }),
+    ...(isDev
+      ? [
+          serve({
+            open: true,
+            contentBase: ['dist', 'public'],
+            host: 'localhost',
+            port: 3000,
+          }),
+          livereload({
+            watch: 'dist',
+          }),
+        ]
+      : []),
+  ],
+  output: {
+    file: 'dist/dev-bundle.mjs',
+    format: 'esm',
+    sourcemap: true,
+  },
+}
+
+// Export different configs based on environment
+export default isDev ? [esmConfig, devConfig] : [esmConfig, cjsConfig]

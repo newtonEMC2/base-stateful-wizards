@@ -10,6 +10,7 @@
     "**/*.test.tsx",
     "**/*.spec.ts",
     "**/*.spec.tsx",
-    "setupTests.ts"
+    "setupTests.ts",
+    "src/dev.tsx"
   ]
 }
