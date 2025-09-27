@@ -1,4 +1,4 @@
-# Contributing to Modals Component
+# Contributing to Base Stateful Accordion
 
 Thank you for your interest in contributing! 🎉
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing! 🎉
 1. **Fork and clone the repository**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/modals-component.git
-   cd modals-component
+   git clone https://github.com/YOUR_USERNAME/base-stateful-accordion.git
+   cd base-stateful-accordion
    ```
 
 2. **Install dependencies**
@@ -35,12 +35,16 @@ Thank you for your interest in contributing! 🎉
 
 - `pnpm dev` - Start development mode with watch
 - `pnpm build` - Build for production
-- `pnpm build:dev` - Build for development
+- `pnpm clean` - Clean the dist folder
 - `pnpm test` - Run tests
+- `pnpm test:watch` - Run tests in watch mode
+- `pnpm test:coverage` - Run tests with coverage report
 - `pnpm type-check` - Run TypeScript type checking
 - `pnpm format` - Format code with Prettier
 - `pnpm format:check` - Check code formatting
 - `pnpm size-check` - Check bundle size
+- `pnpm validate` - Run all quality checks (format, type-check, test)
+- `pnpm prepublishOnly` - Full validation and build before publishing
 
 ### Code Quality
 
@@ -55,9 +59,7 @@ This project uses:
 1. **Run quality checks**
 
    ```bash
-   pnpm format:check
-   pnpm type-check
-   pnpm test
+   pnpm validate
    pnpm build
    ```
 
@@ -68,22 +70,28 @@ This project uses:
 
 3. **Write meaningful commit messages**
    ```bash
-   feat(modal): add animation support
-   fix(modal): resolve focus trap issue
+   feat(accordion): add animation support
+   fix(accordion): resolve focus management issue
    docs(readme): update installation instructions
    ```
 
 ## Project Structure
 
 ```
-modals-component/
+base-stateful-accordion/
 ├── src/                 # Source code
-│   └── index.tsx       # Main modal component
+│   ├── index.tsx       # Main exports
+│   ├── dev.tsx         # Development playground
+│   └── lib/            # Component library
+│       ├── accordion.component.tsx  # Main accordion component
+│       └── __test__/   # Test files
+├── public/             # Static files
+│   └── index.html      # Development HTML
 ├── dist/               # Built files (auto-generated)
-├── .github/            # GitHub workflows and templates
 ├── package.json        # Package configuration
-├── tsup.config.ts      # Build configuration
-└── tsconfig.json       # TypeScript configuration
+├── rollup.config.js    # Build configuration
+├── tsconfig.json       # TypeScript configuration
+└── jest.config.js      # Test configuration
 ```
 
 ## Coding Guidelines
@@ -121,12 +129,16 @@ modals-component/
 ### Test Structure
 
 ```typescript
-describe('Modal', () => {
-  it('should render when isOpen is true', () => {
+describe('Accordion', () => {
+  it('should render with collapsed state by default', () => {
     // Test implementation
   })
 
-  it('should call onClose when overlay is clicked', () => {
+  it('should expand section when header is clicked', () => {
+    // Test implementation
+  })
+
+  it('should handle multiple sections correctly', () => {
     // Test implementation
   })
 })
