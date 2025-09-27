@@ -1,3 +1,12 @@
+# NOTE: This .npmignore file is redundant when package.json has a "files" field.
+# The "files" field acts as a whitelist and takes precedence, making this file unnecessary.
+# Since package.json specifies "files": ["dist", "README.md", "LICENSE"], only those
+# items will be included in the npm package regardless of what's listed here.
+# This file can be safely removed - keeping it for reference/documentation purposes.
+
+# Anyway, I see this as a good practice to exist in the project, just because of legacy issues. In old
+# versions, "files" field might even not exist yet.
+
 # Development files
 src/
 scripts/
