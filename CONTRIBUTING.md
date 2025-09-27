@@ -69,10 +69,63 @@ This project uses:
    - Add screenshots if UI changes are involved
 
 3. **Write meaningful commit messages**
+
+   We follow [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+   **Format**: `<type>[optional scope]: <description>`
+
+   **Types**:
+   - `feat`: A new feature
+   - `fix`: A bug fix
+   - `docs`: Documentation only changes
+   - `style`: Changes that do not affect the meaning of the code
+   - `refactor`: A code change that neither fixes a bug nor adds a feature
+   - `perf`: A code change that improves performance
+   - `test`: Adding missing tests or correcting existing tests
+   - `chore`: Changes to the build process or auxiliary tools
+   - `ci`: Changes to CI configuration files and scripts
+
+   **Examples**:
+
    ```bash
-   feat(accordion): add animation support
-   fix(accordion): resolve focus management issue
+   feat(accordion): add animation support for expand/collapse
+   feat(accordion): add keyboard navigation support
+   feat: add multiple accordion sections support
+
+   fix(accordion): resolve focus management issue on tab navigation
+   fix(accordion): prevent content overflow in small containers
+   fix: resolve TypeScript type errors in accordion props
+
    docs(readme): update installation instructions
+   docs(contributing): add conventional commit guidelines
+   docs: add accordion usage examples
+
+   style(accordion): improve CSS formatting and comments
+   style: fix prettier formatting issues
+
+   refactor(accordion): simplify state management logic
+   refactor: extract common hooks into separate files
+
+   perf(accordion): optimize re-renders on state changes
+   perf: lazy load accordion content
+
+   test(accordion): add unit tests for keyboard interactions
+   test: increase test coverage for edge cases
+
+   chore(deps): update development dependencies
+   chore: add new build scripts
+
+   ci: add automated testing workflow
+   ci: update deployment pipeline
+   ```
+
+   **Breaking Changes**: Add `!` after the type/scope and include `BREAKING CHANGE:` in the footer:
+
+   ```bash
+   feat(accordion)!: change default behavior to single-expand mode
+
+   BREAKING CHANGE: The accordion now defaults to single-expand mode.
+   Use allowMultiple={true} to restore previous behavior.
    ```
 
 ## Project Structure
