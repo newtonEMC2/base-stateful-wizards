@@ -68,12 +68,12 @@ const devConfig = {
   external: [], // Don't externalize anything for dev build
   plugins: [
     resolve({
-      preferBuiltins: true,
+      preferBuiltins: false,
       browser: true, // Use browser versions of packages
     }),
     commonjs(),
     typescript({
-      tsconfig: './tsconfig.build.json',
+      tsconfig: './tsconfig.json', // Use main tsconfig for dev
       declaration: false,
       declarationMap: false,
     }),
@@ -95,4 +95,4 @@ const devConfig = {
 }
 
 // Export different configs based on environment
-export default isDev ? [esmConfig, devConfig] : [esmConfig, cjsConfig]
+export default isDev ? devConfig : [esmConfig, cjsConfig]

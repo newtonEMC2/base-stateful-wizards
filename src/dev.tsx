@@ -1,19 +1,27 @@
 /**
- * Development testing file for the Accordion component.
+ * Development testing file for the Wizard Accordion component.
  * This file is used only for local development and testing purposes.
  * Run with 'pnpm dev' to start the development server.
  * Not included in the final package bundle.
  */
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { AccordionComponent } from './lib/accordion.component'
+import { WizardExample } from './lib/vertical-stateful-wizard/wizard.example'
 
 const App: React.FC = () => {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>Accordion Development</h1>
-      <h2>Your Accordion Component:</h2>
-      <AccordionComponent />
+    <div
+      style={{
+        padding: '20px',
+        fontFamily: 'Arial, sans-serif',
+        backgroundColor: '#f5f5f5',
+        minHeight: '100vh',
+      }}
+    >
+      <h1 style={{ textAlign: 'center', color: '#333', marginBottom: '32px' }}>
+        Wizard Accordion Development
+      </h1>
+      <WizardExample />
     </div>
   )
 }

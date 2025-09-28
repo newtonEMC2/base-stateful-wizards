@@ -1,2 +1,1 @@
-export * from './lib/accordion.component';
-
+export * from './lib/vertical-stateful-wizard/wizard.component'
