@@ -35,7 +35,7 @@ jobs:
         id: check_version
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          if npm view "@qcolabs/base-stateful-accordion@$VERSION" version &> /dev/null; then
+          if npm view "@qcolabs/base-stateful-wizards@$VERSION" version &> /dev/null; then
             echo "::error::Version $VERSION already exists on NPM. Please create a new release with a new version number."
             exit 1
           fi
@@ -72,4 +72,4 @@ jobs:
         run: |
           echo "✅ Package published successfully!" >> $GITHUB_STEP_SUMMARY
           echo "📦 Version: ${{ github.event.release.tag_name }}" >> $GITHUB_STEP_SUMMARY
-          echo "🔗 NPM: https://www.npmjs.com/package/@qcolabs/base-stateful-accordion" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 NPM: https://www.npmjs.com/package/@qcolabs/base-stateful-wizards" >> $GITHUB_STEP_SUMMARY

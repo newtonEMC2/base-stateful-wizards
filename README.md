@@ -1,8 +1,8 @@
 # Base Stateful Accordion
 
-[![npm version](https://badge.fury.io/js/%40qcolabs%2Fbase-stateful-accordion.svg)](https://badge.fury.io/js/%40qcolabs%2Fbase-stateful-accordion)
-[![npm downloads](https://img.shields.io/npm/dm/%40qcolabs%2Fbase-stateful-accordion.svg)](https://www.npmjs.com/package/%40qcolabs%2Fbase-stateful-accordion)
-[![CI](https://github.com/newtonEMC2/base-stateful-accordion/actions/workflows/ci.yml/badge.svg)](https://github.com/newtonEMC2/base-stateful-accordion/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/%40qcolabs%2Fbase-stateful-wizards.svg)](https://badge.fury.io/js/%40qcolabs%2Fbase-stateful-wizards)
+[![npm downloads](https://img.shields.io/npm/dm/%40qcolabs%2Fbase-stateful-wizards.svg)](https://www.npmjs.com/package/%40qcolabs%2Fbase-stateful-wizards)
+[![CI](https://github.com/newtonEMC2/base-stateful-wizards/actions/workflows/ci.yml/badge.svg)](https://github.com/newtonEMC2/base-stateful-wizards/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -10,23 +10,23 @@ A lightweight, accessible, and customizable React modal component library with T
 
 ## 🚀 Live Demo
 
-Try it out in CodeSandbox: **[Interactive Demo](https://codesandbox.io/p/github/newtonEMC2/base-stateful-accordion/main?import=true&workspaceId=ws_XP4ZJku14x3GBrsVK3Gt5s)**
+Try it out in CodeSandbox: **[Interactive Demo](https://codesandbox.io/p/github/newtonEMC2/base-stateful-wizards/main?import=true&workspaceId=ws_XP4ZJku14x3GBrsVK3Gt5s)**
 
 ## Installation
 
 ```bash
-npm install @qcolabs/base-stateful-accordion
+npm install @qcolabs/base-stateful-wizards
 # or
-yarn add @qcolabs/base-stateful-accordion
+yarn add @qcolabs/base-stateful-wizards
 # or
-pnpm add @qcolabs/base-stateful-accordion
+pnpm add @qcolabs/base-stateful-wizards
 ```
 
 ## Usage
 
 ```tsx
 import React, { useState } from 'react'
-import { Accordion } from '@qcolabs/base-stateful-accordion'
+import { Accordion } from '@qcolabs/base-stateful-wizards'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -97,7 +97,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ```bash
 # Fork and clone the repo
-git clone https://github.com/newtonEMC2/base-stateful-accordion.git
+git clone https://github.com/newtonEMC2/base-stateful-wizards.git
 
 # Install dependencies
 pnpm install
@@ -111,13 +111,13 @@ pnpm format:check && pnpm type-check && pnpm build
 
 ## 📝 Changelog
 
-See [Releases](https://github.com/newtonEMC2/base-stateful-accordion/releases) for a detailed changelog.
+See [Releases](https://github.com/newtonEMC2/base-stateful-wizards/releases) for a detailed changelog.
 
 ## 🐛 Issues & Support
 
-- 🐞 **Bug Reports**: [GitHub Issues](https://github.com/newtonEMC2/base-stateful-accordion/issues)
-- 💡 **Feature Requests**: [GitHub Issues](https://github.com/newtonEMC2/base-stateful-accordion/issues)
-- 💬 **Questions**: [GitHub Discussions](https://github.com/newtonEMC2/base-stateful-accordion/discussions)
+- 🐞 **Bug Reports**: [GitHub Issues](https://github.com/newtonEMC2/base-stateful-wizards/issues)
+- 💡 **Feature Requests**: [GitHub Issues](https://github.com/newtonEMC2/base-stateful-wizards/issues)
+- 💬 **Questions**: [GitHub Discussions](https://github.com/newtonEMC2/base-stateful-wizards/discussions)
 
 ## 📊 Bundle Size
 

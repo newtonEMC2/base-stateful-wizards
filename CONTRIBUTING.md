@@ -1,4 +1,4 @@
-# Contributing to Base Stateful Accordion
+# Contributing to Base Stateful wizards
 
 Thank you for your interest in contributing! 🎉
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing! 🎉
 1. **Fork and clone the repository**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/base-stateful-accordion.git
-   cd base-stateful-accordion
+   git clone https://github.com/YOUR_USERNAME/base-stateful-wizards.git
+   cd base-stateful-wizards
    ```
 
 2. **Install dependencies**
@@ -88,28 +88,28 @@ This project uses:
    **Examples**:
 
    ```bash
-   feat(accordion): add animation support for expand/collapse
-   feat(accordion): add keyboard navigation support
-   feat: add multiple accordion sections support
+   feat(wizards): add animation support for expand/collapse
+   feat(wizards): add keyboard navigation support
+   feat: add multiple wizards sections support
 
-   fix(accordion): resolve focus management issue on tab navigation
-   fix(accordion): prevent content overflow in small containers
-   fix: resolve TypeScript type errors in accordion props
+   fix(wizards): resolve focus management issue on tab navigation
+   fix(wizards): prevent content overflow in small containers
+   fix: resolve TypeScript type errors in wizards props
 
    docs(readme): update installation instructions
    docs(contributing): add conventional commit guidelines
-   docs: add accordion usage examples
+   docs: add wizards usage examples
 
-   style(accordion): improve CSS formatting and comments
+   style(wizards): improve CSS formatting and comments
    style: fix prettier formatting issues
 
-   refactor(accordion): simplify state management logic
+   refactor(wizards): simplify state management logic
    refactor: extract common hooks into separate files
 
-   perf(accordion): optimize re-renders on state changes
-   perf: lazy load accordion content
+   perf(wizards): optimize re-renders on state changes
+   perf: lazy load wizards content
 
-   test(accordion): add unit tests for keyboard interactions
+   test(wizards): add unit tests for keyboard interactions
    test: increase test coverage for edge cases
 
    chore(deps): update development dependencies
@@ -122,21 +122,21 @@ This project uses:
    **Breaking Changes**: Add `!` after the type/scope and include `BREAKING CHANGE:` in the footer:
 
    ```bash
-   feat(accordion)!: change default behavior to single-expand mode
+   feat(wizards)!: change default behavior to single-expand mode
 
-   BREAKING CHANGE: The accordion now defaults to single-expand mode.
+   BREAKING CHANGE: The wizards now defaults to single-expand mode.
    Use allowMultiple={true} to restore previous behavior.
    ```
 
 ## Project Structure
 
 ```
-base-stateful-accordion/
+base-stateful-wizards/
 ├── src/                 # Source code
 │   ├── index.tsx       # Main exports
 │   ├── dev.tsx         # Development playground
 │   └── lib/            # Component library
-│       ├── accordion.component.tsx  # Main accordion component
+│       ├── wizards.component.tsx  # Main wizards component
 │       └── __test__/   # Test files
 ├── public/             # Static files
 │   └── index.html      # Development HTML
@@ -182,7 +182,7 @@ base-stateful-accordion/
 ### Test Structure
 
 ```typescript
-describe('Accordion', () => {
+describe('wizards', () => {
   it('should render with collapsed state by default', () => {
     // Test implementation
   })
