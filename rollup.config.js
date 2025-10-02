@@ -82,15 +82,17 @@ const devConfig = {
       declaration: false,
       declarationMap: false,
     }),
-    serve({
-      open: true,
-      contentBase: ['dist', 'public'],
-      host: 'localhost',
-      port: 3000,
-    }),
-    livereload({
-      watch: 'dist',
-    }),
+    isDev && [
+      serve({
+        open: true,
+        contentBase: ['dist', 'public'],
+        host: 'localhost',
+        port: 3000,
+      }),
+      livereload({
+        watch: 'dist',
+      }),
+    ],
   ],
   output: {
     file: 'dist/dev-bundle.mjs',

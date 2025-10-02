@@ -23,7 +23,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "NODE_ENV=production pnpm clean && rollup -c",
+    "build": "pnpm clean && NODE_ENV=production rollup -c",
     "dev": "NODE_ENV=development rollup -c --watch",
     "clean": "rm -rf dist",
     "format": "prettier --write .",
