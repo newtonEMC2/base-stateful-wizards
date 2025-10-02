@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
+import replace from '@rollup/plugin-replace'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 
@@ -67,6 +68,10 @@ const devConfig = {
   input: 'src/dev.tsx',
   external: [], // Don't externalize anything for dev build
   plugins: [
+    replace({
+      'process.env.NODE_ENV': "'development'",
+      preventAssignment: true,
+    }),
     resolve({
       preferBuiltins: false,
       browser: true, // Use browser versions of packages
