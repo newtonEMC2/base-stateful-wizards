@@ -26,7 +26,7 @@ export const WizardAccordionStepHeader: FC<WizardAccordionStepHeaderProps> = ({
   sx,
   ...props
 }) => (
-  <summary
+  <section
     {...props}
     style={{
       padding: 3,
@@ -38,7 +38,7 @@ export const WizardAccordionStepHeader: FC<WizardAccordionStepHeaderProps> = ({
       children({ isCompleted, isActive, isDisabled, isClickable })}
     {typeof children === 'object' && children}
     {children === undefined && props.title}
-  </summary>
+  </section>
 )
 
 export const WizardAccordionStepContent: FC<
@@ -163,7 +163,7 @@ export const WizardAccordionLayout: FC<WizardAccordionLayoutProps> = ({
         })
 
         return (
-          <details
+          <section
             id={step.id}
             key={step.id}
             style={{
@@ -177,7 +177,7 @@ export const WizardAccordionLayout: FC<WizardAccordionLayoutProps> = ({
             <div style={{ display: isActive ? 'block' : 'none' }}>
               {contentWithProps}
             </div>
-          </details>
+          </section>
         )
       })}
     </section>

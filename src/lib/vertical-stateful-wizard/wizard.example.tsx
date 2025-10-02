@@ -23,7 +23,19 @@ const SimpleStepContent: React.FC<{
   showBackButton,
 }) => (
   <div style={{ padding: '16px' }}>
-    <p style={{ marginBottom: '16px', color: '#666' }}>{description}</p>
+    <p
+      style={{
+        marginBottom: '16px',
+        color: '#666',
+      }}
+    >
+      {description}
+    </p>
+    {isCompleted && (
+      <p style={{ marginBottom: '16px', color: '#2E7D32' }}>
+        🎉 <strong>This step is completed!</strong>
+      </p>
+    )}
     <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
       {showBackButton && (
         <button
@@ -44,19 +56,17 @@ const SimpleStepContent: React.FC<{
       )}
       <button
         onClick={onComplete}
-        disabled={isCompleted}
         style={{
-          backgroundColor: !isCompleted ? '#4CAF50' : '#E0E0E0',
-          color: !isCompleted ? 'white' : '#999',
+          backgroundColor: '#4CAF50',
+          color: 'white',
           border: 'none',
           padding: '10px 20px',
           borderRadius: '4px',
-          cursor: !isCompleted ? 'pointer' : 'not-allowed',
           fontSize: '14px',
           fontWeight: 'bold',
         }}
       >
-        {isCompleted ? '✅ Completed' : `Complete ${title}`}
+        {`Complete ${title}`}
       </button>
     </div>
   </div>
@@ -144,7 +154,9 @@ export const WizardExample: React.FC = () => {
               title="Step 2"
               description="This is the second step. You can only access this after completing step 1."
               onComplete={() => handleStepComplete('step2')}
-              onBack={() => wizard.goToPreviousStep()}
+              onBack={() => {
+                wizard.goToPreviousStep()
+              }}
               isCompleted={
                 wizard.steps.find(s => s.id === 'step2')?.isCompleted || false
               }
