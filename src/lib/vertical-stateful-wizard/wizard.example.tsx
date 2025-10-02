@@ -11,26 +11,54 @@ const SimpleStepContent: React.FC<{
   title: string
   description: string
   onComplete: () => void
+  onBack?: () => void
   isCompleted: boolean
-}> = ({ title, description, onComplete, isCompleted }) => (
+  showBackButton?: boolean
+}> = ({
+  title,
+  description,
+  onComplete,
+  onBack,
+  isCompleted,
+  showBackButton,
+}) => (
   <div style={{ padding: '16px' }}>
     <p style={{ marginBottom: '16px', color: '#666' }}>{description}</p>
-    <button
-      onClick={onComplete}
-      disabled={isCompleted}
-      style={{
-        backgroundColor: !isCompleted ? '#4CAF50' : '#E0E0E0',
-        color: !isCompleted ? 'white' : '#999',
-        border: 'none',
-        padding: '10px 20px',
-        borderRadius: '4px',
-        cursor: !isCompleted ? 'pointer' : 'not-allowed',
-        fontSize: '14px',
-        fontWeight: 'bold',
-      }}
-    >
-      {isCompleted ? '✅ Completed' : `Complete ${title}`}
-    </button>
+    <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+      {showBackButton && (
+        <button
+          onClick={onBack}
+          style={{
+            backgroundColor: '#757575',
+            color: 'white',
+            border: 'none',
+            padding: '10px 20px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: 'bold',
+          }}
+        >
+          ← Back
+        </button>
+      )}
+      <button
+        onClick={onComplete}
+        disabled={isCompleted}
+        style={{
+          backgroundColor: !isCompleted ? '#4CAF50' : '#E0E0E0',
+          color: !isCompleted ? 'white' : '#999',
+          border: 'none',
+          padding: '10px 20px',
+          borderRadius: '4px',
+          cursor: !isCompleted ? 'pointer' : 'not-allowed',
+          fontSize: '14px',
+          fontWeight: 'bold',
+        }}
+      >
+        {isCompleted ? '✅ Completed' : `Complete ${title}`}
+      </button>
+    </div>
   </div>
 )
 
@@ -89,6 +117,7 @@ export const WizardExample: React.FC = () => {
               isCompleted={
                 wizard.steps.find(s => s.id === 'step1')?.isCompleted || false
               }
+              showBackButton={false} // First step doesn't need back button
             />
           </WizardAccordionStepContent>
         </WizardAccordionStep>
@@ -115,9 +144,11 @@ export const WizardExample: React.FC = () => {
               title="Step 2"
               description="This is the second step. You can only access this after completing step 1."
               onComplete={() => handleStepComplete('step2')}
+              onBack={() => wizard.goToPreviousStep()}
               isCompleted={
                 wizard.steps.find(s => s.id === 'step2')?.isCompleted || false
               }
+              showBackButton={!wizard.isFirstStep}
             />
           </WizardAccordionStepContent>
         </WizardAccordionStep>
@@ -144,9 +175,11 @@ export const WizardExample: React.FC = () => {
               title="Step 3"
               description="This is the final step. Complete this to finish the wizard."
               onComplete={() => handleStepComplete('step3')}
+              onBack={() => wizard.goToPreviousStep()}
               isCompleted={
                 wizard.steps.find(s => s.id === 'step3')?.isCompleted || false
               }
+              showBackButton={!wizard.isFirstStep}
             />
           </WizardAccordionStepContent>
         </WizardAccordionStep>
