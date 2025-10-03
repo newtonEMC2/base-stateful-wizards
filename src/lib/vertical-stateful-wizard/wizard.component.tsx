@@ -55,6 +55,7 @@ export const WizardAccordionStepContent: FC<
   <section
     {...props}
     style={{
+      display: isActive ? 'block' : 'none',
       padding: '0 3px 3px 3px',
       ...(sx ? sx : {}),
     }}
@@ -164,7 +165,6 @@ export const WizardAccordionLayout: FC<WizardAccordionLayoutProps> = ({
 
         return (
           <section
-            id={step.id}
             key={step.id}
             style={{
               borderRadius: 2,
@@ -174,9 +174,7 @@ export const WizardAccordionLayout: FC<WizardAccordionLayoutProps> = ({
             }}
           >
             {headerWithProps}
-            <div style={{ display: isActive ? 'block' : 'none' }}>
-              {contentWithProps}
-            </div>
+            {contentWithProps}
           </section>
         )
       })}
