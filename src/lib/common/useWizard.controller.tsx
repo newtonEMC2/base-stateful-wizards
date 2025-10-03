@@ -1,3 +1,11 @@
+/**
+ * This is the uncontrolled wizard controller version.
+ * As opposed to a controlled version, it manages its own state internally.
+ *
+ * It provides navigation methods and state flags to manage the wizard steps.
+ *
+ */
+
 import { useCallback, useMemo, useState } from 'react'
 
 import {
