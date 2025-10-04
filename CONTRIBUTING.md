@@ -149,6 +149,26 @@ base-stateful-wizards/
 
 ## Coding Guidelines
 
+### Tree-Shaking
+
+**This library is fully tree-shakable. Please maintain this capability:**
+
+✅ **DO:**
+
+- Use **named exports only** (never default exports)
+- Keep modules free of side effects
+- Import dependencies cleanly
+- Test bundle size impact of changes
+
+❌ **DON'T:**
+
+- Add default exports
+- Add top-level code execution
+- Create circular dependencies
+- Add unnecessary dependencies
+
+📖 **See:** [Tree-Shaking Technical Guide](docs/TREE-SHAKING-TECHNICAL.md)
+
 ### TypeScript
 
 - Use strict TypeScript settings

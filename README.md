@@ -70,8 +70,22 @@ export default App
 - ♿ **Accessible** - Click outside to close, keyboard navigation
 - 🎨 **Customizable** - Easy to style and theme
 - 🚀 **Modern** - Built with latest React patterns
-- 📊 **Tree-shakable** - Only import what you need
+- 📊 **Tree-shakable** - Bundlers automatically eliminate unused code
 - 🔄 **SSR Compatible** - Works with Next.js and other SSR frameworks
+
+### Tree-Shaking
+
+This library is **fully tree-shakable**. Import only what you need:
+
+```tsx
+// ✅ Import only what you need
+import { useWizardController } from '@qcolabs/base-stateful-wizards'
+
+// ❌ Avoid importing everything
+import * as Everything from '@qcolabs/base-stateful-wizards'
+```
+
+📖 **[Read the Tree-Shaking Guide](./docs/TREE-SHAKING.md)** for details.
 
 ## Development
 
