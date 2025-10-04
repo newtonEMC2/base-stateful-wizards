@@ -13,7 +13,7 @@ const external = ['react', 'react-dom', 'react/jsx-runtime']
 
 // Base configuration for JavaScript builds
 const baseConfig = {
-  input: 'src/index.tsx',
+  input: 'src/lib/index.tsx',
   external,
   plugins: [
     resolve({
