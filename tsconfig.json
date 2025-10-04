@@ -19,6 +19,22 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    /* Strict Checks */
+    "strictFunctionTypes": true, // Enables strict checking of function types - prevents bivariant function parameter checking
+    "strictNullChecks": true, // Enables strict null checks - prevents null/undefined from being assigned to non-nullable types
+    "strictBindCallApply": true, // Enables strict checking of bind, call, and apply methods on functions
+    "strictPropertyInitialization": true, // Enables strict checking of property initialization in classes
+    "noImplicitAny": true, // Raises error on expressions and declarations with an implied 'any' type
+    "noImplicitThis": true, // Raises error when 'this' expressions have an implicit 'any' type
+    "useUnknownInCatchVariables": true, // Type catch clause variables as 'unknown' instead of 'any'
+    "alwaysStrict": true, // Parse in strict mode and emit "use strict" for each source file
+
+    /* Additional Type Checks */
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value
+    "noUncheckedIndexedAccess": false, // Include undefined in index signature results - prevents accessing array/object properties without checking bounds
+    "exactOptionalPropertyTypes": false, // Interpret optional property types as written, rather than adding undefined to the type
+    "noPropertyAccessFromIndexSignature": true, // Require index signatures to be accessed with bracket notation instead of dot notation
+
     /* Interop */
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

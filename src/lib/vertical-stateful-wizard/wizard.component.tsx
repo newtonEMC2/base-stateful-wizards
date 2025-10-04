@@ -69,7 +69,7 @@ export const WizardAccordionStepContent: FC<
 export const WizardAccordionStep: FC<WizardAccordionStepProps> = ({
   children,
 }) => {
-  return children
+  return <>{children}</>
 }
 
 // I am adding this to make debugging easier
