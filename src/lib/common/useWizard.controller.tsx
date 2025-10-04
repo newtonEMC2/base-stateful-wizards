@@ -8,13 +8,13 @@
 
 import { useCallback, useMemo, useState } from 'react'
 
-export interface UseWizardProps {
+interface UseWizardProps {
   steps: (Omit<WizardStepData, 'isOpen' | 'isCompleted'> &
     Partial<Pick<WizardStepData, 'isOpen' | 'isCompleted'>>)[]
   initialStep?: string
 }
 
-export interface UseWizardReturn {
+interface UseWizardReturn {
   steps: WizardStepData[]
   currentStepId: string
   goToStep: (stepId: string) => void

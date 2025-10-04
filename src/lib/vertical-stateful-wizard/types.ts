@@ -6,7 +6,7 @@ import { WizardStepData } from '../common/types'
  * WizardAccordionStep types
  */
 
-export interface WizardAccordionStepHeaderState {
+interface WizardAccordionStepHeaderState {
   isCompleted: boolean
   isActive: boolean
   isDisabled: boolean

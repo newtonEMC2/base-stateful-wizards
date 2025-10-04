@@ -1,11 +1,12 @@
 import React from 'react'
-import { useWizardController } from '../common/useWizard.controller'
+
 import {
+  useWizardController,
   WizardAccordionLayout,
   WizardAccordionStep,
   WizardAccordionStepHeader,
   WizardAccordionStepContent,
-} from './wizard.component'
+} from '../index'
 
 const SimpleStepContent: React.FC<{
   title: string
