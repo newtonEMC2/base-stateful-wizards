@@ -41,6 +41,7 @@ const esmConfig = {
     format: 'esm',
     sourcemap: !isProduction,
   },
+  treeshake: true, //is true by default but we want to be explicit
 }
 
 // Configuration for CommonJS build
