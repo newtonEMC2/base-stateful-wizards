@@ -11,6 +11,13 @@ export default {
     '<rootDir>/src/**/__tests__/**/*.(ts|tsx|js)',
     '<rootDir>/src/**/?(*.)(spec|test).(ts|tsx|js)',
   ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/dist/',
+    '/coverage/',
+    'dev.tsx',
+    '\\.example\\..*',
+  ],
 
   // Transform files
   transform: {
@@ -28,6 +35,8 @@ export default {
     '!src/setupTests.ts',
     '!src/**/__tests__/**',
     '!src/**/?(*.)(spec|test).*',
+    '!src/dev.tsx',
+    '!src/**/*.example.*',
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
