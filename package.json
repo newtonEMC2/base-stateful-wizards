@@ -1,6 +1,6 @@
 {
   "name": "@qcolabs/base-stateful-wizards",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "type": "module",
   "description": "A lightweight, accessible, and customizable React wizards component library with TypeScript support. Features expandable sections, responsive design, and zero dependencies.",
   "main": "dist/index.js",
