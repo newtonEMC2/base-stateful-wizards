@@ -26,7 +26,11 @@ jobs:
 
       - name: Configure Git
         run: |
-          git fetch --all --tags --prune --unshallow
+          if [ -f .git/shallow ]; then
+            git fetch --all --tags --prune --unshallow
+          else
+            git fetch --all --tags --prune
+          fi
           git checkout main
           git pull origin main
 
